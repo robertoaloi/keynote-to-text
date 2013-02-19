@@ -18,7 +18,7 @@ main([Filename]) ->
 files(Filename) ->
     {ok, Zip} = zip:zip_open(Filename),
     {ok, Files} = zip:zip_list_dir(Zip),
-    [Name || {zip_file, Name, _Info, _, _, _} <- lists:sort(Files)].
+    filter([Name || {zip_file, Name, _Info, _, _, _} <- lists:sort(Files)]).
 
 -spec strings(string()) -> [string()].
 strings(Filename) ->
@@ -30,3 +30,17 @@ strings(Filename) ->
         end,
     {ok, Strings, _} = erlsom:parse_sax(Xml, [], F),
     Strings.
+
+filter(Filenames) ->
+    filter(Filenames, []).
+
+filter([], Acc) ->
+    Acc;
+filter(["QuickLook/" ++ _|T], Acc) ->
+    filter(T, Acc);
+filter(["thumbs/" ++ _|T], Acc) ->
+    filter(T, Acc);
+filter([".iWTrash/" ++ _|T], Acc) ->
+    filter(T, Acc);
+filter([H|T], Acc) ->
+    filter(T, [H|Acc]).
