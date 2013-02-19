@@ -26,4 +26,8 @@ Now you can get diffs from your Apple Keynote files:
 
     git diff awesome_slideshow.key
 
-Clone it, try it, kill it.
+Some sample output from `git diff` is shown below. You can notice how I have removed an image, edited some text and made a non-printable change on slide 82.
+
+![Git Diff Sample Output](/screenshots/riak-diffs.png "Git Diff Sample Output")
+
+Clone it, try it, love it.
