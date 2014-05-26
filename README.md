@@ -2,8 +2,10 @@
 
 'keynote-to-text' is a simple script which converts Apple Keynote files into plain-text files. It requires Erlang to be installed on your machine. Usage:
 
-    make
-    ./keynote-to-text /PATH/TO/SLIDESHOW.key
+    $ git clone git@github.com:robertoaloi/keynote-to-text.git
+    $ cd keynote-to-text
+    $ make
+    $ ./keynote-to-text /PATH/TO/SLIDESHOW.key
 
 The output produced by the 'keynote-to-text' script currently contains two sections:
 
