@@ -33,3 +33,7 @@ Some sample output from `git diff` is shown below. You can notice how I have rem
 ![Git Diff Sample Output](/screenshots/riak-diffs.png "Git Diff Sample Output")
 
 Clone it, try it, love it.
+
+## Compatibility Notes
+
+The script is not compatible with Apple Keynote 6 (yet). Pull requests are welcome.
